@@ -66,9 +66,9 @@ class UFDS {
                 size[y] += size[x];
                 sum[y] += sum[x];
             }
-        }
 
-        count--;
+            count--;
+        }
     }
 
     // For Debugging/Visualisation Only
