@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * Represents a functionally immutable 2D point.
  * Stores the x- and y-coordinates as {@code double} values.
@@ -108,6 +110,11 @@ class Point implements Comparable<Point> {
         }
 
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.x, this.y);
     }
 
     /**

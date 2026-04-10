@@ -5,7 +5,7 @@ class IntegerTriple implements Comparable<IntegerTriple> {
     private final int v;
 
     public IntegerTriple(int weight, int u, int v) {
-        this.weight = weight; // weight of edges
+        this.weight = weight; // weight of edge
         this.u = u; // starting vertex
         this.v = v; // ending vertex
     }
