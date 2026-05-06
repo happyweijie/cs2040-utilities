@@ -64,7 +64,7 @@ class DijkstraDense {
             }
         }
 
-        // print shortest time from start to end
+        // print shortest distance from start to end
         System.out.println(shortestDist[end] != INF ? shortestDist[end] : "No path exists");
     }
 }
