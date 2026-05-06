@@ -37,7 +37,7 @@ class PrimDenseDemo {
         // Start from source vertex 0
         int src = 0;
         minWeight[src][0] = 0;
-        minWeight[src][1] = 0;
+        minWeight[src][1] = src; // src is its own parent
 
         // while not all vertices are in T
         for (int i = 0; i < n; i++) {
