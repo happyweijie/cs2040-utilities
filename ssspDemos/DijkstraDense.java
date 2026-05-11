@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 class DijkstraDense {
 
-    public static final int INF = 1_000_000_000;
+    private static final int INF = 1_000_000_000;
     
     public static void main(String[] args) {
 
