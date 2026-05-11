@@ -14,11 +14,11 @@ class DijkstraDense {
         // Adjacency matrix
         int n = 5; // number of vertices 
         int[][] adjMatrix = {
-            {0,3,7,5,0},
-            {3,0,2,1,0},
-            {7,2,0,4,0},
-            {5,1,4,0,0},
-            {0,0,0,0,0}
+            {0, 3, 7, 5, 0},
+            {3, 0, 2, 1, 0},
+            {7, 2, 0, 4, 0},
+            {5, 1, 4, 0, 0},
+            {0, 0, 0, 0, 0}
         };
 
         /* Dijkstra's algorithm */
