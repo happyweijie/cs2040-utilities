@@ -21,17 +21,17 @@ class DijkstraDense {
             {0, 0, 0, 0, 0}
         };
 
+        int start = 0; 
+        int end = 4; 
+
         /* Dijkstra's algorithm */
         // init sssp
         int[] shortestDist = new int[n];
         Arrays.fill(shortestDist, INF);
+        shortestDist[start] = 0;
 
         // visited array to track which vertices have been finalized
         boolean[] visited = new boolean[n];
-
-        int start = 0; // starting vertex
-        shortestDist[start] = 0; // distance from start to itself is 0
-        int end = 4; // ending vertex
 
         // while we haven't visited the end point, keep relaxing edges
         while (!visited[end]) {
