@@ -40,8 +40,8 @@ class DijkstraDense {
             int minDist = INF;
             for (int i = 0; i < n; i++) {
                 if (!visited[i] && shortestDist[i] < minDist){
-                    minDist = shortestDist[i];
                     u = i;
+                    minDist = shortestDist[i];
                 }
             }
             
