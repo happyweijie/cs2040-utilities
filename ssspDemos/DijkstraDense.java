@@ -11,8 +11,7 @@ class DijkstraDense {
     
     public static void main(String[] args) {
 
-        // Adjacency matrix
-        int n = 5; // number of vertices 
+        // Adjacency matrix representation of the graph
         int[][] adjMatrix = {
             {0, 3, 7, 5, 0},
             {3, 0, 2, 1, 0},
@@ -22,9 +21,18 @@ class DijkstraDense {
         };
 
         int start = 0; 
-        int end = 4; 
+        int end = 2; 
 
-        /* Dijkstra's algorithm */
+        // Run Dijkstra's algorithm
+        int dist = dijkstra(adjMatrix, start, end);
+        System.out.println(dist == -1 ? "No path exists" : dist);
+    }
+
+    /* Dijkstra's algorithm */
+    public static int dijkstra(int[][] graph, int start, int end) {
+        // number of vertices in the graph
+        int n = graph.length;
+
         // init sssp
         int[] shortestDist = new int[n];
         Arrays.fill(shortestDist, INF);
@@ -33,7 +41,6 @@ class DijkstraDense {
         // visited array to track which vertices have been finalized
         boolean[] visited = new boolean[n];
 
-        // while we haven't visited the end point, keep relaxing edges
         while (!visited[end]) {
             // Find the unvisited vertex with the smallest distance
             int u = -1;
@@ -55,16 +62,16 @@ class DijkstraDense {
 
             // loop over neighbours of u
             for (int v = 0; v < n; v++) {
-                if (!visited[v] && adjMatrix[u][v] != 0) {
+                if (!visited[v] && graph[u][v] != 0) {
                     // relaxation
                     shortestDist[v] = Math.min(
                         shortestDist[v], 
-                        shortestDist[u] + adjMatrix[u][v]);
+                        shortestDist[u] + graph[u][v]);
                 }
             }
         }
 
-        // print shortest distance from start to end
-        System.out.println(shortestDist[end] != INF ? shortestDist[end] : "No path exists");
+        // return -1 if no path exists
+        return shortestDist[end] == INF ? -1 : shortestDist[end]; 
     }
 }
